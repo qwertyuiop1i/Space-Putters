@@ -44,7 +44,7 @@ public class GolfBallScript : MonoBehaviour
         if (Input.GetMouseButton(0) && isAiming)
         {
             aimDirection = (mousePos - (Vector2)transform.position).normalized;
-            power = Mathf.Clamp(Vector2.Distance((Vector2) transform.position, mousePos),0f,10f);
+            power = Mathf.Clamp(Vector2.Distance((Vector2) transform.position, mousePos),0f,7f);
         }
         if (Input.GetMouseButtonUp(0) && isAiming)
         {
