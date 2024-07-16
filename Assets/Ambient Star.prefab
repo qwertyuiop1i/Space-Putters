@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3717485067533515258}
   - component: {fileID: 80682556116795679}
+  - component: {fileID: -4175593262390482295}
   m_Layer: 0
   m_Name: Ambient Star
   m_TagString: Untagged
@@ -46,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ComponentVersion: 1
   m_LightType: 3
-  m_BlendStyleIndex: 0
+  m_BlendStyleIndex: 1
   m_FalloffIntensity: 0.349
   m_Color: {r: 0.7725819, g: 0.7924528, b: 0.32445708, a: 1}
   m_Intensity: 7.04
@@ -111,3 +112,18 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &-4175593262390482295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4446742014395210588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5392f493b46b3284b987057bbbce2059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starlight: {fileID: 0}
+  blinkInterval: 1.98
+  lightOnDuration: 3.5
