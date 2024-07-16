@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class GolfBallScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+   
+    public AudioClip collisionSound;
+    private AudioSource audioSource; 
+
     public Rigidbody2D rb;
 
     public bool isMoving;
@@ -19,6 +22,8 @@ public class GolfBallScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
+
         isMoving = false;
         isAiming = false;
         isWon = false;
@@ -39,7 +44,7 @@ public class GolfBallScript : MonoBehaviour
         if (Input.GetMouseButton(0) && isAiming)
         {
             aimDirection = (mousePos - (Vector2)transform.position).normalized;
-            power = Vector2.Distance((Vector2) transform.position, mousePos);
+            power = Mathf.Clamp(Vector2.Distance((Vector2) transform.position, mousePos),0f,10f);
         }
         if (Input.GetMouseButtonUp(0) && isAiming)
         {
@@ -51,4 +56,16 @@ public class GolfBallScript : MonoBehaviour
         
 
     }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collisionSound != null && audioSource != null)
+        {
+            
+            float volume = Mathf.Clamp(rb.velocity.magnitude / 10.0f, 0f, 1.0f);
+            audioSource.volume = volume;
+            audioSource.PlayOneShot(collisionSound);
+        }
+    }
+
+
 }
