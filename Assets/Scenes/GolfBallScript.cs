@@ -15,6 +15,7 @@ public class GolfBallScript : MonoBehaviour
     public float power;
 
     public int shots;
+    public int par;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
