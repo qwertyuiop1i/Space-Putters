@@ -7,4 +7,4 @@ The purple circle bounces the ball off with a stronger velocity than what it imp
 You want to get the green ball into glowing orange circle, that is emitting particles.
 
 Basic gameplay mechanic is done.
-Here is the itch.io link for a download of a build: https://itch.io/game/edit/2837296
+Here is the itch.io link for a download of a build: https://qwertyuiop13.itch.io/space-putters
