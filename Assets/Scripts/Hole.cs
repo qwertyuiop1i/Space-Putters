@@ -5,10 +5,15 @@ using UnityEngine;
 public class Hole : MonoBehaviour
 {
     public GameObject ball;
+
+    public GameObject winScreen;
+    public GameObject loseScreen;
     // Start is called before the first frame update
     void Start()
     {
         ball = GameObject.Find("Ball");
+        winScreen.SetActive(false);
+        loseScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -25,6 +30,7 @@ public class Hole : MonoBehaviour
         {
             collision.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             ball.GetComponent<GolfBallScript>().isWon = true;
+            winScreen.SetActive(true);
         }
     }
   
