@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+
 
 public class GolfBallScript : MonoBehaviour
 {
    
     public AudioClip collisionSound;
     public AudioClip hitSound;
-    private AudioSource audioSource; 
+    private AudioSource audioSource;
 
+    public TextMeshProUGUI strikeText;
 
     public Rigidbody2D rb;
 
@@ -40,6 +43,8 @@ public class GolfBallScript : MonoBehaviour
         power = 0f;
         shots = 0;
 
+        strikeText.text = "Strikes: " + shots;
+
         aimLine = GetComponent<LineRenderer>();
         aimLine.enabled = false;
 
@@ -70,6 +75,9 @@ public class GolfBallScript : MonoBehaviour
             Color lineColor = Color.Lerp(minPowerColor, maxPowerColor, power / maxPower);
             aimLine.startColor = lineColor;
             aimLine.endColor = lineColor;
+
+            
+            
         }
 
         if (Input.GetMouseButtonUp(0) && isAiming)
@@ -81,6 +89,8 @@ public class GolfBallScript : MonoBehaviour
             float volume = power / maxPower;
             audioSource.volume = volume; 
             audioSource.PlayOneShot(hitSound);
+            shots += 1;
+            strikeText.text = "Strikes: " + shots;
         }
         isMoving = rb.velocity.magnitude > 0.1f;
         
