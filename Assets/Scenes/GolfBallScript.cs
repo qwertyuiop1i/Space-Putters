@@ -10,6 +10,12 @@ public class GolfBallScript : MonoBehaviour
 
     public Rigidbody2D rb;
 
+    public LineRenderer aimLine;
+    public float minLineThickness = 0.2f;
+    public float maxLineThickness = 0.7f;
+    public Color minPowerColor = Color.green;
+    public Color maxPowerColor = Color.red;
+
     public bool isMoving;
     public bool isAiming;
     public bool isWon;
@@ -30,6 +36,10 @@ public class GolfBallScript : MonoBehaviour
 
         power = 0f;
         shots = 0;
+
+        aimLine = GetComponent<LineRenderer>();
+        aimLine.enabled = false;
+
     }
 
     // Update is called once per frame
@@ -40,17 +50,31 @@ public class GolfBallScript : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
             isAiming = true;
+            aimLine.enabled = true;
         }
+
         if (Input.GetMouseButton(0) && isAiming)
         {
             aimDirection = (mousePos - (Vector2)transform.position).normalized;
             power = Mathf.Clamp(Vector2.Distance((Vector2) transform.position, mousePos),0f,7f);
+
+            aimLine.SetPosition(0, transform.position);
+            aimLine.SetPosition(1, mousePos);
+
+            float lineThickness = Mathf.Lerp(minLineThickness, maxLineThickness, power / 7f);
+            aimLine.startWidth = lineThickness;
+            aimLine.endWidth = lineThickness;
+            Color lineColor = Color.Lerp(minPowerColor, maxPowerColor, power / 7f);
+            aimLine.startColor = lineColor;
+            aimLine.endColor = lineColor;
         }
+
         if (Input.GetMouseButtonUp(0) && isAiming)
         {
             isMoving = true;
             isAiming = false;
             rb.velocity = aimDirection * -power * 5f;
+            aimLine.enabled = false;
         }
         isMoving = rb.velocity.magnitude > 0.1f;
         
