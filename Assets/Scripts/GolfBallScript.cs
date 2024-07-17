@@ -25,6 +25,8 @@ public class GolfBallScript : MonoBehaviour
     public bool isAiming;
     public bool isWon;
 
+    public bool ballPassing = false;
+
     public Vector2 aimDirection;
     public float power;
     public float maxPower = 7f;
