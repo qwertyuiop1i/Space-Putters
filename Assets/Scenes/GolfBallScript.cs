@@ -6,7 +6,9 @@ public class GolfBallScript : MonoBehaviour
 {
    
     public AudioClip collisionSound;
+    public AudioClip hitSound;
     private AudioSource audioSource; 
+
 
     public Rigidbody2D rb;
 
@@ -22,6 +24,7 @@ public class GolfBallScript : MonoBehaviour
 
     public Vector2 aimDirection;
     public float power;
+    public float maxPower = 7f;
 
     public int shots;
     public int par;
@@ -56,15 +59,15 @@ public class GolfBallScript : MonoBehaviour
         if (Input.GetMouseButton(0) && isAiming)
         {
             aimDirection = (mousePos - (Vector2)transform.position).normalized;
-            power = Mathf.Clamp(Vector2.Distance((Vector2) transform.position, mousePos),0f,7f);
+            power = Mathf.Clamp(Vector2.Distance((Vector2) transform.position, mousePos),0f,maxPower);
 
             aimLine.SetPosition(0, transform.position);
             aimLine.SetPosition(1, mousePos);
 
-            float lineThickness = Mathf.Lerp(minLineThickness, maxLineThickness, power / 7f);
+            float lineThickness = Mathf.Lerp(minLineThickness, maxLineThickness, power / maxPower);
             aimLine.startWidth = lineThickness;
             aimLine.endWidth = lineThickness;
-            Color lineColor = Color.Lerp(minPowerColor, maxPowerColor, power / 7f);
+            Color lineColor = Color.Lerp(minPowerColor, maxPowerColor, power / maxPower);
             aimLine.startColor = lineColor;
             aimLine.endColor = lineColor;
         }
@@ -75,6 +78,9 @@ public class GolfBallScript : MonoBehaviour
             isAiming = false;
             rb.velocity = aimDirection * -power * 5f;
             aimLine.enabled = false;
+            float volume = power / maxPower;
+            audioSource.volume = volume; 
+            audioSource.PlayOneShot(hitSound);
         }
         isMoving = rb.velocity.magnitude > 0.1f;
         

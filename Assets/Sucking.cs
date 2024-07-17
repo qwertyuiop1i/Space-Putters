@@ -15,13 +15,17 @@ public class Sucking : MonoBehaviour
         {
             if (collider.gameObject.CompareTag("Ball"))
             {
-                Rigidbody2D rb = collider.GetComponent<Rigidbody2D>();
-                if (rb != null)
+                float distance = Vector2.Distance(transform.position, collider.transform.position);
+                if (distance <= pullRadius)
                 {
-                    Vector2 direction = (transform.position - collider.transform.position).normalized;
-                    float distance = Vector2.Distance(transform.position, collider.transform.position);
-                    float force = pullForce * (pullRadius - distance) / pullRadius;
-                    rb.AddForce(direction * force);
+                    Rigidbody2D rb = collider.GetComponent<Rigidbody2D>();
+                    if (rb != null)
+                    {
+                        Vector2 direction = (transform.position - collider.transform.position).normalized;
+
+                        float force = pullForce * (pullRadius - distance) / pullRadius;
+                        rb.AddForce(direction * force);
+                    }
                 }
             }
         }
