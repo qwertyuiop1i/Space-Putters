@@ -96,8 +96,8 @@ MonoBehaviour:
   aimLine: {fileID: 1731577076}
   minLineThickness: 1
   maxLineThickness: 1
-  minPowerColor: {r: 1, g: 1, b: 1, a: 1}
-  maxPowerColor: {r: 1, g: 1, b: 1, a: 1}
+  minPowerColor: {r: 0.23036718, g: 1, b: 0, a: 1}
+  maxPowerColor: {r: 0.8773585, g: 0.185404, b: 0.185404, a: 1}
   isMoving: 0
   isAiming: 0
   isWon: 0

@@ -178,8 +178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5be678a99cdf448b11413701fca3d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pullForce: -10
-  pullRadius: 5
+  pullForce: -15.82
+  pullRadius: 5.25
 --- !u!58 &8226714282134944708
 CircleCollider2D:
   m_ObjectHideFlags: 0
