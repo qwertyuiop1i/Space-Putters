@@ -141,21 +141,7 @@
             },
             "m_InputSlot": {
                 "m_Node": {
-                    "m_Id": "b4ed5596d8ad48349f6a455f01437f14"
-                },
-                "m_SlotId": 0
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
-                    "m_Id": "7bf9fd7861924fa4a68068c6eb935a76"
-                },
-                "m_SlotId": 4
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "435166a33990436ea70afdf9f1781b42"
+                    "m_Id": "e7cfd6c199c949c7bd7ea9f795fb5adc"
                 },
                 "m_SlotId": 0
             }
@@ -170,6 +156,20 @@
             "m_InputSlot": {
                 "m_Node": {
                     "m_Id": "81371182fda04b609c1288de178eb26b"
+                },
+                "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "81371182fda04b609c1288de178eb26b"
+                },
+                "m_SlotId": 2
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "b4ed5596d8ad48349f6a455f01437f14"
                 },
                 "m_SlotId": 0
             }
@@ -622,7 +622,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Width",
     "m_StageCapability": 3,
-    "m_Value": 0.30000001192092898,
+    "m_Value": 0.4000000059604645,
     "m_DefaultValue": 0.5,
     "m_Labels": []
 }
@@ -757,10 +757,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -211.19998168945313,
-            "y": 287.20001220703127,
+            "x": -207.99996948242188,
+            "y": 352.7999572753906,
             "width": 105.59999084472656,
-            "height": 33.5999755859375
+            "height": 33.60003662109375
         }
     },
     "m_Slots": [
@@ -1453,7 +1453,7 @@
     "m_Hidden": false,
     "m_Value": {
         "r": 3067.984375,
-        "g": 0.0,
+        "g": 2400.700439453125,
         "b": 0.0,
         "a": 0.0
     },
@@ -1563,7 +1563,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Height",
     "m_StageCapability": 3,
-    "m_Value": 0.4000000059604645,
+    "m_Value": 0.699999988079071,
     "m_DefaultValue": 0.5,
     "m_Labels": []
 }

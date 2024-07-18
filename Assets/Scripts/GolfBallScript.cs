@@ -15,11 +15,15 @@ public class GolfBallScript : MonoBehaviour
 
     public Rigidbody2D rb;
 
+    public GameObject mousePE;
+ 
+
     public LineRenderer aimLine;
     public float minLineThickness = 0.2f;
     public float maxLineThickness = 0.7f;
     public Color minPowerColor = Color.green;
     public Color maxPowerColor = Color.red;
+    public Material Lmaterial;
 
     public bool isMoving;
     public bool isAiming;
@@ -35,8 +39,11 @@ public class GolfBallScript : MonoBehaviour
     public int par;
     void Start()
     {
+        mousePE = GameObject.Find("mouseParticles");
+        
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
+        
 
         isMoving = false;
         isAiming = false;
@@ -49,6 +56,7 @@ public class GolfBallScript : MonoBehaviour
 
         aimLine = GetComponent<LineRenderer>();
         aimLine.enabled = false;
+
 
     }
 
@@ -77,8 +85,12 @@ public class GolfBallScript : MonoBehaviour
             Color lineColor = Color.Lerp(minPowerColor, maxPowerColor, power / maxPower);
             aimLine.startColor = lineColor;
             aimLine.endColor = lineColor;
+            Lmaterial.SetColor("_Color", lineColor*800);
 
-            
+            mousePE.transform.position = mousePos;
+
+
+
             
         }
 
@@ -93,9 +105,11 @@ public class GolfBallScript : MonoBehaviour
             audioSource.PlayOneShot(hitSound);
             shots += 1;
             strikeText.text = "Strikes: " + shots;
+
         }
         isMoving = rb.velocity.magnitude > 0.1f;
         
+
 
     }
     void OnCollisionEnter2D(Collision2D collision)
