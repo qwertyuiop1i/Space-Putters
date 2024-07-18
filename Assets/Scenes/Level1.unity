@@ -19011,7 +19011,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -411
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.02171591, g: 0.035197504, b: 0.09433961, a: 1}
+  m_Color: {r: 0.19560343, g: 0.20220727, b: 0.254717, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -19034,7 +19034,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1068242733 stripped
 Transform:
@@ -26593,7 +26593,7 @@ Transform:
   - {fileID: 1062375972}
   - {fileID: 864038155}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1515447534 stripped
 Transform:
@@ -36535,25 +36535,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1731577076, guid: 51f3dc29ee6c75f49b9975d660b98fc2, type: 3}
-      propertyPath: m_Loop
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1731577076, guid: 51f3dc29ee6c75f49b9975d660b98fc2, type: 3}
-      propertyPath: m_Parameters.textureMode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2338921486094651495, guid: 51f3dc29ee6c75f49b9975d660b98fc2, type: 3}
       propertyPath: strikeText
       value: 
       objectReference: {fileID: 2094501328}
     - target: {fileID: 2338921486094651495, guid: 51f3dc29ee6c75f49b9975d660b98fc2, type: 3}
-      propertyPath: maxLineThickness
-      value: 0.5
+      propertyPath: maxPowerColor.b
+      value: 0.185404
       objectReference: {fileID: 0}
     - target: {fileID: 2338921486094651495, guid: 51f3dc29ee6c75f49b9975d660b98fc2, type: 3}
-      propertyPath: minLineThickness
-      value: 0.5
+      propertyPath: maxPowerColor.g
+      value: 0.185404
+      objectReference: {fileID: 0}
+    - target: {fileID: 2338921486094651495, guid: 51f3dc29ee6c75f49b9975d660b98fc2, type: 3}
+      propertyPath: maxPowerColor.r
+      value: 0.8773585
+      objectReference: {fileID: 0}
+    - target: {fileID: 2338921486094651495, guid: 51f3dc29ee6c75f49b9975d660b98fc2, type: 3}
+      propertyPath: minPowerColor.b
+      value: 0.22356708
+      objectReference: {fileID: 0}
+    - target: {fileID: 2338921486094651495, guid: 51f3dc29ee6c75f49b9975d660b98fc2, type: 3}
+      propertyPath: minPowerColor.g
+      value: 0.22356708
+      objectReference: {fileID: 0}
+    - target: {fileID: 2338921486094651495, guid: 51f3dc29ee6c75f49b9975d660b98fc2, type: 3}
+      propertyPath: minPowerColor.r
+      value: 0.754717
       objectReference: {fileID: 0}
     - target: {fileID: 2338921486094651496, guid: 51f3dc29ee6c75f49b9975d660b98fc2, type: 3}
       propertyPath: m_Name
@@ -38375,7 +38383,7 @@ MonoBehaviour:
   m_IsGlobal: 1
   priority: 0
   blendDistance: 0
-  weight: 1
+  weight: 0.941
   sharedProfile: {fileID: 11400000, guid: c709cccb137bb5d40a8ff3bcc6dd02f3, type: 2}
 --- !u!4 &2070290760
 Transform:
@@ -38390,7 +38398,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2073296927
 PrefabInstance:

@@ -94,10 +94,10 @@ MonoBehaviour:
   strikeText: {fileID: 0}
   rb: {fileID: 0}
   aimLine: {fileID: 1731577076}
-  minLineThickness: 0.2
-  maxLineThickness: 0.7
-  minPowerColor: {r: 0, g: 1, b: 0, a: 1}
-  maxPowerColor: {r: 1, g: 0, b: 0, a: 1}
+  minLineThickness: 1
+  maxLineThickness: 1
+  minPowerColor: {r: 1, g: 1, b: 1, a: 1}
+  maxPowerColor: {r: 1, g: 1, b: 1, a: 1}
   isMoving: 0
   isAiming: 0
   isWon: 0
@@ -5351,7 +5351,7 @@ LineRenderer:
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 3
+    textureMode: 1
     shadowBias: 0.5
     generateLightingData: 0
   m_UseWorldSpace: 1
