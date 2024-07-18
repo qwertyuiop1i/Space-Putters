@@ -16,7 +16,7 @@ public class GolfBallScript : MonoBehaviour
     public Rigidbody2D rb;
 
     public GameObject mousePE;
- 
+    private ParticleSystem mouseParticleSystem;
 
     public LineRenderer aimLine;
     public float minLineThickness = 0.2f;
@@ -37,12 +37,16 @@ public class GolfBallScript : MonoBehaviour
 
     public int shots;
     public int par;
+
+
     void Start()
     {
         mousePE = GameObject.Find("mouseParticles");
-        
+        mouseParticleSystem = mousePE.GetComponent<ParticleSystem>();
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
+
+
         
 
         isMoving = false;
@@ -63,12 +67,14 @@ public class GolfBallScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if ((Vector2.Distance(transform.position, mousePos)<1f)&&Input.GetMouseButtonDown(0) && !isMoving &&!isWon)
         {
             rb.velocity = Vector2.zero;
             isAiming = true;
             aimLine.enabled = true;
+            mouseParticleSystem.Play();
         }
 
         if (Input.GetMouseButton(0) && isAiming)
@@ -89,9 +95,12 @@ public class GolfBallScript : MonoBehaviour
 
             mousePE.transform.position = mousePos;
 
-
-
             
+ 
+                
+
+
+
         }
 
         if (Input.GetMouseButtonUp(0) && isAiming)
@@ -105,6 +114,7 @@ public class GolfBallScript : MonoBehaviour
             audioSource.PlayOneShot(hitSound);
             shots += 1;
             strikeText.text = "Strikes: " + shots;
+            mouseParticleSystem.Stop();
 
         }
         isMoving = rb.velocity.magnitude > 0.1f;
