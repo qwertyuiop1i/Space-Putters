@@ -36535,10 +36535,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1731577076, guid: 51f3dc29ee6c75f49b9975d660b98fc2, type: 3}
+      propertyPath: m_Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1731577076, guid: 51f3dc29ee6c75f49b9975d660b98fc2, type: 3}
+      propertyPath: m_Parameters.textureMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2338921486094651495, guid: 51f3dc29ee6c75f49b9975d660b98fc2, type: 3}
       propertyPath: strikeText
       value: 
       objectReference: {fileID: 2094501328}
+    - target: {fileID: 2338921486094651495, guid: 51f3dc29ee6c75f49b9975d660b98fc2, type: 3}
+      propertyPath: maxLineThickness
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2338921486094651495, guid: 51f3dc29ee6c75f49b9975d660b98fc2, type: 3}
+      propertyPath: minLineThickness
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2338921486094651496, guid: 51f3dc29ee6c75f49b9975d660b98fc2, type: 3}
       propertyPath: m_Name
       value: Ball
