@@ -9,6 +9,7 @@ public class GolfBallScript : MonoBehaviour
    
     public AudioClip collisionSound;
     public AudioClip hitSound;
+    public AudioClip chargeSound;
     private AudioSource audioSource;
 
     public TextMeshProUGUI strikeText;
@@ -60,7 +61,7 @@ public class GolfBallScript : MonoBehaviour
 
         aimLine = GetComponent<LineRenderer>();
         aimLine.enabled = false;
-
+        mouseParticleSystem.Stop();
 
     }
 
@@ -75,6 +76,8 @@ public class GolfBallScript : MonoBehaviour
             isAiming = true;
             aimLine.enabled = true;
             mouseParticleSystem.Play();
+            audioSource.loop = true;
+
         }
 
         if (Input.GetMouseButton(0) && isAiming)
@@ -95,9 +98,13 @@ public class GolfBallScript : MonoBehaviour
 
             mousePE.transform.position = mousePos;
 
-            
- 
-                
+
+            audioSource.clip = chargeSound;
+
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
 
 
 
@@ -115,6 +122,8 @@ public class GolfBallScript : MonoBehaviour
             shots += 1;
             strikeText.text = "Strikes: " + shots;
             mouseParticleSystem.Stop();
+            audioSource.Stop();
+            audioSource.loop = false;
 
         }
         isMoving = rb.velocity.magnitude > 0.1f;
