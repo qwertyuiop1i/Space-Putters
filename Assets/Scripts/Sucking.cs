@@ -14,7 +14,7 @@ public class Sucking : MonoBehaviour
     {
         ps = GetComponent<ParticleSystem>();
         var pe = ps.emission;
-        pe.rateOverTime = pullForce * 3;
+        pe.rateOverTime = Mathf.Abs(pullForce * 3);
         var pss = ps.shape;
         pss.radius = pullRadius*0.5f;
 
