@@ -8,6 +8,8 @@ public class Sucking : MonoBehaviour
     public float pullRadius = 5.0f;
 
     public ParticleSystem ps;
+
+    public LineRenderer lr;
     private void Start()
     {
         ps = GetComponent<ParticleSystem>();
@@ -15,6 +17,26 @@ public class Sucking : MonoBehaviour
         pe.rateOverTime = pullForce * 3;
         var pss = ps.shape;
         pss.radius = pullRadius*0.5f;
+
+
+        lr = GetComponent<LineRenderer>();
+
+        int segments = 360;
+        float angle = 0f;
+
+        lr.positionCount = segments + 1;
+        lr.useWorldSpace = false;
+
+        for (int i = 0; i < segments + 1; i++)
+        {
+            float x = Mathf.Sin(Mathf.Deg2Rad * angle) * pullRadius*0.5f;
+            float y = Mathf.Cos(Mathf.Deg2Rad * angle) * pullRadius*0.5f;
+
+            lr.SetPosition(i, new Vector3(x, y, 0));
+
+            angle += (360f / segments);
+        }
+
     }
     void Update()
     {
@@ -32,7 +54,7 @@ public class Sucking : MonoBehaviour
                     {
                         Vector2 direction = (transform.position - collider.transform.position).normalized;
 
-                        float force = pullForce/(0.1f+Mathf.Pow(distance,2));
+                        float force = pullForce/(0.3f+Mathf.Pow(distance,2));
                         rb.AddForce(direction * force);
                     }
                 }
