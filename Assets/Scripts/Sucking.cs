@@ -7,6 +7,15 @@ public class Sucking : MonoBehaviour
     public float pullForce = 10.0f;
     public float pullRadius = 5.0f;
 
+    public ParticleSystem ps;
+    private void Start()
+    {
+        ps = GetComponent<ParticleSystem>();
+        var pe = ps.emission;
+        pe.rateOverTime = pullForce * 3;
+        var pss = ps.shape;
+        pss.radius = pullRadius*0.5f;
+    }
     void Update()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, pullRadius);
@@ -23,7 +32,7 @@ public class Sucking : MonoBehaviour
                     {
                         Vector2 direction = (transform.position - collider.transform.position).normalized;
 
-                        float force = pullForce * (pullRadius - distance) / pullRadius;
+                        float force = pullForce/(0.1f+Mathf.Pow(distance,2));
                         rb.AddForce(direction * force);
                     }
                 }
