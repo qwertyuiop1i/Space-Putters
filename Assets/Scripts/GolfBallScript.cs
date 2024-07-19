@@ -77,12 +77,13 @@ public class GolfBallScript : MonoBehaviour
             isAiming = true;
             aimLine.enabled = true;
             mouseParticleSystem.Play();
-            audioSource.loop = true;
+            
 
         }
 
         if (Input.GetMouseButton(0) && isAiming)
         {
+
             aimDirection = (mousePos - (Vector2)transform.position).normalized;
             power = Mathf.Clamp(Vector2.Distance((Vector2) transform.position, mousePos)/3,0f,maxPower);
 
@@ -120,20 +121,24 @@ public class GolfBallScript : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0) && isAiming)
         {
+            mouseParticleSystem.Stop();
+            audioSource.Stop();
+            float volume = power / maxPower;
+            audioSource.volume = volume;
             isMoving = true;
             isAiming = false;
             rb.velocity = aimDirection * -power * 5f;
             aimLine.enabled = false;
-            float volume = power / maxPower;
-            audioSource.volume = volume; 
+            
+           
             audioSource.PlayOneShot(hitSound);
             shots += 1;
             strikeText.text = "Strikes: " + shots;
 
-            mouseParticleSystem.Stop();
-            audioSource.Stop();
-            audioSource.loop = false;
-            audioSource.volume = power / maxPower;
+           
+      
+            
+
             audioSource.PlayOneShot(releaseSound);
         }
         isMoving = rb.velocity.magnitude > 0.1f;
@@ -145,8 +150,8 @@ public class GolfBallScript : MonoBehaviour
     {
         if (collisionSound != null && audioSource != null)
         {
-            
-            float volume = Mathf.Clamp(rb.velocity.magnitude / 10.0f, 0f, 1.0f);
+
+            float volume = power / maxPower;
             audioSource.volume = volume;
             audioSource.PlayOneShot(collisionSound);
         }
