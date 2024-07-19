@@ -10,6 +10,7 @@ public class GolfBallScript : MonoBehaviour
     public AudioClip collisionSound;
     public AudioClip hitSound;
     public AudioClip chargeSound;
+    public AudioClip releaseSound;
     private AudioSource audioSource;
 
     public TextMeshProUGUI strikeText;
@@ -97,9 +98,16 @@ public class GolfBallScript : MonoBehaviour
             Lmaterial.SetColor("_Color", lineColor*800);
 
             mousePE.transform.position = mousePos;
+            var em = mousePE.GetComponent<ParticleSystem>().emission;
+            em.rateOverTime = power * 4;
+            var mav = mousePE.GetComponent<ParticleSystem>().main;
+            mav.startSpeed = power*8;
+
+
 
 
             audioSource.clip = chargeSound;
+            audioSource.volume = power / maxPower;
 
             if (!audioSource.isPlaying)
             {
@@ -121,10 +129,12 @@ public class GolfBallScript : MonoBehaviour
             audioSource.PlayOneShot(hitSound);
             shots += 1;
             strikeText.text = "Strikes: " + shots;
+
             mouseParticleSystem.Stop();
             audioSource.Stop();
             audioSource.loop = false;
-
+            audioSource.volume = power / maxPower;
+            audioSource.PlayOneShot(releaseSound);
         }
         isMoving = rb.velocity.magnitude > 0.1f;
         
