@@ -6,32 +6,22 @@ public class fanBehavior : MonoBehaviour
 {
     public float forceStrength = 10f;
     public float radius = 5f;
-    public float angleTolerance = 15f;
+   
 
 
 
 
-    private void Update()
+
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radius);
-        foreach (Collider2D collider in colliders)
+        Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();
+        if (rb!=null)
         {
-            Rigidbody2D rb = collider.GetComponent<Rigidbody2D>();
-            if (rb != null)
-            {
-                Vector2 directionToTarget = collider.transform.position - transform.position;
-                float angle = Vector2.Angle(transform.right, directionToTarget);
-               // Debug.Log(angle);
-
-                if (angle <= angleTolerance)
-                {
-                    rb.AddForce(transform.right * forceStrength * Time.fixedDeltaTime);
-                }
-            }
+            rb.AddForce(transform.up*forceStrength*Time.deltaTime);
+            //Debug.Log("ge");
         }
     }
-    
 
-    
+
 
 }
