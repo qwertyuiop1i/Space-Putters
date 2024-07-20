@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
+  onTut: 0
 --- !u!4 &24053044 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7820821437529084263, guid: 8624c23bf920c51409694fdf48f471f9, type: 3}
