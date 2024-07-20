@@ -4,19 +4,38 @@ using UnityEngine;
 
 public class InitialTutorialCode : MonoBehaviour
 {
-    // Start is called before the first frame update
     public SpriteRenderer sr;
+    public Vector2 travel;
+    public float speed = 2f;
+    public float fadeDuration = 1f;
 
-    public bool onTut;
-    void Start()
-    {
-        onTut = true;
-        transform.localPosition = new Vector2(0, 0);
-    }
+    private bool movingToTarget = true;
+    private float fadeTimer = 0f;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (movingToTarget)
+        {
+            transform.localPosition = Vector2.MoveTowards(transform.localPosition, travel, speed * Time.deltaTime);
+
+            if (Vector2.Distance(transform.localPosition, travel) < 0.1f)
+            {
+                movingToTarget = false;
+                fadeTimer = 0f;
+            }
+        }
+        else
+        {
+            fadeTimer += Time.deltaTime;
+            sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, Mathf.Lerp(1f, 0f, fadeTimer / fadeDuration));
+
+            if (fadeTimer >= fadeDuration)
+            {
+                transform.localPosition = Vector2.zero;
+                sr.color = Color.white; // Reset color to full opacity
+                movingToTarget = true;
+                fadeTimer = 0f;
+            }
+        }
     }
 }
