@@ -11,6 +11,8 @@ public class Hole : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       // winScreen = GameObject.Find("PopupWin");
+       // loseScreen = GameObject.Find("PopupLose");
         ball = GameObject.Find("Ball");
         winScreen.SetActive(false);
         loseScreen.SetActive(false);

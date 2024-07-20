@@ -9897,6 +9897,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1511982584}
     m_Modifications:
+    - target: {fileID: 4241572098632992508, guid: 9c55052ac668d2148a5595948b7168d7, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8101163379201216900, guid: 9c55052ac668d2148a5595948b7168d7, type: 3}
       propertyPath: waypoints.Array.data[0].x
       value: -6.5
@@ -52990,7 +52994,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8101163379201216900, guid: 9c55052ac668d2148a5595948b7168d7, type: 3}
       propertyPath: waypoints.Array.data[1].x
-      value: 12.5
+      value: -12.5
       objectReference: {fileID: 0}
     - target: {fileID: 8101163379201216900, guid: 9c55052ac668d2148a5595948b7168d7, type: 3}
       propertyPath: waypoints.Array.data[1].y
