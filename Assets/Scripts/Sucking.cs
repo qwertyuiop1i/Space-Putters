@@ -54,7 +54,7 @@ public class Sucking : MonoBehaviour
                     {
                         Vector2 direction = (transform.position - collider.transform.position).normalized;
 
-                        float force = pullForce/(0.3f+Mathf.Pow(distance,2));
+                        float force = pullForce/(0.01f+Mathf.Pow(distance,2));
                         rb.AddForce(direction * force);
                     }
                 }
