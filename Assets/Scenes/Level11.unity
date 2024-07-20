@@ -30670,6 +30670,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 605242341000975972, guid: 5daea815802482f4199ce9cf0ed4faea, type: 3}
+      propertyPath: pullRadius
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 605242341000975975, guid: 5daea815802482f4199ce9cf0ed4faea, type: 3}
       propertyPath: m_Name
       value: BlackholeHazard
@@ -59745,11 +59749,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2338921486094651498, guid: 51f3dc29ee6c75f49b9975d660b98fc2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.46
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 2338921486094651498, guid: 51f3dc29ee6c75f49b9975d660b98fc2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.45
+      value: -7.5
       objectReference: {fileID: 0}
     - target: {fileID: 2338921486094651498, guid: 51f3dc29ee6c75f49b9975d660b98fc2, type: 3}
       propertyPath: m_LocalPosition.z
