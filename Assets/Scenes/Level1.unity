@@ -19246,10 +19246,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -4146032833644869688, guid: f854d919cf4cb624aace027b4edace87, type: 3}
-      propertyPath: m_Intensity
-      value: 13.95
-      objectReference: {fileID: 0}
     - target: {fileID: 1100623494493451144, guid: f854d919cf4cb624aace027b4edace87, type: 3}
       propertyPath: m_Name
       value: Hole
@@ -45363,11 +45359,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4745491247093542582, guid: b954fad69f060484283d15f0d491b756, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.6717846
+      value: -2.53
       objectReference: {fileID: 0}
     - target: {fileID: 4745491247093542582, guid: b954fad69f060484283d15f0d491b756, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5783587
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 4745491247093542582, guid: b954fad69f060484283d15f0d491b756, type: 3}
       propertyPath: m_LocalPosition.z
@@ -65428,6 +65424,10 @@ PrefabInstance:
     - target: {fileID: 2830435899474634031, guid: aaaf4d33e9b90964ab0e354850e2c697, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8139614455169211655, guid: aaaf4d33e9b90964ab0e354850e2c697, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 5.699951
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaaf4d33e9b90964ab0e354850e2c697, type: 3}

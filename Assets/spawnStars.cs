@@ -11,7 +11,7 @@ public class spawnStars : MonoBehaviour
 
     void Start()
     {
-        transform.position = Vector2.zero;
+        transform.position = new Vector2(-2.53f, 0.15f);
 
         SpawnStars();   
     }
