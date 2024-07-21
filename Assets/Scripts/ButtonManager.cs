@@ -15,8 +15,10 @@ public class ButtonManager : MonoBehaviour
         isPaused = false;
         isSped = false;
         speed = 1.0f;
+        Time.timeScale = speed;
     }
-    
+
+
     public void NextLevel()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;

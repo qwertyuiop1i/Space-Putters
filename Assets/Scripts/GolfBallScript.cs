@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 
 public class GolfBallScript : MonoBehaviour
@@ -13,7 +14,7 @@ public class GolfBallScript : MonoBehaviour
     public AudioClip releaseSound;
     private AudioSource audioSource;
 
-    public TextMeshProUGUI strikeText;
+    public GameObject strikeText;
 
     public Rigidbody2D rb;
 
@@ -47,6 +48,7 @@ public class GolfBallScript : MonoBehaviour
         mouseParticleSystem = mousePE.GetComponent<ParticleSystem>();
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
+        strikeText = GameObject.Find("HitTrack");
 
 
         
@@ -58,7 +60,7 @@ public class GolfBallScript : MonoBehaviour
         power = 0f;
         shots = 0;
 
-        strikeText.text = "Strikes: " + shots;
+        
 
         aimLine = GetComponent<LineRenderer>();
         aimLine.enabled = false;
@@ -133,11 +135,11 @@ public class GolfBallScript : MonoBehaviour
            
             audioSource.PlayOneShot(hitSound);
             shots += 1;
-            strikeText.text = "Strikes: " + shots;
+            strikeText.GetComponent<TextMeshProUGUI>().text = "Strikes: " + shots;
 
-           
-      
-            
+
+
+
 
             audioSource.PlayOneShot(releaseSound);
         }
