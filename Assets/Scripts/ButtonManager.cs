@@ -8,6 +8,8 @@ public class ButtonManager : MonoBehaviour
     public bool isPaused = false;
     public bool isSped = false;
     public float speed = 1.0f;
+
+    public GameObject pauseScreen;
     private void Start()
     {
         isPaused = false;
@@ -36,6 +38,15 @@ public class ButtonManager : MonoBehaviour
     {
         isPaused = !isPaused;
         Time.timeScale = isPaused ? 0f : speed;
+        if (isPaused)
+        {
+            pauseScreen.SetActive(true);
+        }
+        else
+        {
+            pauseScreen.SetActive(false);
+        }
+
     }
     public void ToggleSpeed()
     {

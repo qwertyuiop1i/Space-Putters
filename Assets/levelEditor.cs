@@ -30,8 +30,12 @@ public class levelEditor : MonoBehaviour
             }
         }
     }
-    public void select(GameObject selection)
+    public void select(GameObject selection=null)
     {
-        selected = selection;
+        if (selection)
+        {
+            selected = selection;
+        }
+
     }
 }
