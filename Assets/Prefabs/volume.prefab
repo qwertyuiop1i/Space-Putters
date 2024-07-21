@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4745491247093542582}
   - component: {fileID: 4745491247093542585}
+  - component: {fileID: -4086371001190082149}
   m_Layer: 0
   m_Name: volume
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4745491247093542584}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6717846, y: -1.5783587, z: 10.865166}
+  m_LocalPosition: {x: -4.5, y: 0, z: 10.865166}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -49,3 +50,19 @@ MonoBehaviour:
   blendDistance: 0
   weight: 0.941
   sharedProfile: {fileID: 11400000, guid: c709cccb137bb5d40a8ff3bcc6dd02f3, type: 2}
+--- !u!114 &-4086371001190082149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4745491247093542584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2df6927cf3324be469df586c1fbe345d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starPrefab: {fileID: 4446742014395210588, guid: 7befa89cf11a5eb40b0d50f69d0fde5d, type: 3}
+  starCount: 40
+  spawnAreaWidth: 38
+  spawnAreaHeight: 20.4

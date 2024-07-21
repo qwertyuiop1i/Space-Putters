@@ -11,9 +11,16 @@ public class InitialTutorialCode : MonoBehaviour
 
     private bool movingToTarget = true;
     private float fadeTimer = 0f;
+   
+
 
     void Update()
     {
+
+        if ((transform.parent.GetComponent<Rigidbody2D>().velocity).sqrMagnitude > 0)
+        {
+            Destroy(gameObject);
+        }
         if (movingToTarget)
         {
             transform.localPosition = Vector2.MoveTowards(transform.localPosition, travel, speed * Time.deltaTime);
