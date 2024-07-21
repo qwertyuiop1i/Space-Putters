@@ -8075,9 +8075,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2029512016}
+      - m_Target: {fileID: 2029512017}
         m_TargetAssemblyTypeName: levelEditor, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: select
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1451900819536491304, guid: 8624c23bf920c51409694fdf48f471f9, type: 3}
@@ -14491,6 +14491,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdf3e63cdd876d64097bf48971832a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &525783571 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1597953134454532982, guid: 8624c23bf920c51409694fdf48f471f9, type: 3}
+  m_PrefabInstance: {fileID: 30026602}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &527293573
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16009,9 +16014,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2029512016}
+      - m_Target: {fileID: 2029512017}
         m_TargetAssemblyTypeName: levelEditor, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: select
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 3553558341980905138, guid: d56e50c45a5744d4d947d49bcba030e0, type: 3}
@@ -31119,9 +31124,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2029512016}
+      - m_Target: {fileID: 2029512017}
         m_TargetAssemblyTypeName: levelEditor, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: select
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 964471005786619184, guid: 9f8cd6fe4e251bb42807a028bfc57a55, type: 3}
@@ -36838,9 +36843,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2029512016}
+      - m_Target: {fileID: 2029512017}
         m_TargetAssemblyTypeName: levelEditor, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: select
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 411240097337007813, guid: fca3d43103338864e9de291484996f60, type: 3}
@@ -58475,9 +58480,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2029512016}
+      - m_Target: {fileID: 2029512017}
         m_TargetAssemblyTypeName: levelEditor, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: select
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8226714282134944707, guid: eccf4f8eff3c84f4aa8d3a0e4c57cf6c, type: 3}
@@ -58555,10 +58560,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edeb68704d4010540b39ca64a806cd49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selected: {fileID: 0}
-  sr: {fileID: 0}
-  size: 0
-  strength: 0
+  selected: {fileID: 1451900819536491304, guid: 8624c23bf920c51409694fdf48f471f9, type: 3}
+  previewSprite: {fileID: 525783571}
+  size: 1
+  strength: 0.9
   rot: 0
 --- !u!212 &2029512018
 SpriteRenderer:
@@ -58601,15 +58606,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8bcfeb45c932420449f9d8f58023da77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &2029512019
